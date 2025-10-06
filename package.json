@@ -1,0 +1,51 @@
+{
+  "name": "moises-clone",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.899.0",
+    "@headlessui/react": "1.7.17",
+    "@types/node": "20.9.0",
+    "@types/react": "18.2.37",
+    "@types/react-dom": "18.2.15",
+    "autoprefixer": "10.4.16",
+    "axios": "1.6.2",
+    "class-variance-authority": "0.7.0",
+    "clsx": "2.0.0",
+    "cors": "^2.8.5",
+    "d3-axis": "^3.0.0",
+    "d3-scale": "^4.0.2",
+    "d3-selection": "^3.0.0",
+    "d3-time": "^3.1.0",
+    "d3-time-format": "^4.1.0",
+    "d3-zoom": "^3.0.0",
+    "express": "^5.1.0",
+    "ffprobe-static": "^3.1.0",
+    "firebase": "^9.23.0",
+    "framer-motion": "10.16.5",
+    "lucide-react": "0.294.0",
+    "multer": "^2.0.2",
+    "music-metadata": "^11.9.0",
+    "next": "14.0.3",
+    "nexusui": "^2.1.6",
+    "postcss": "8.4.31",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-firebase-hooks": "^5.1.1",
+    "react-hot-toast": "2.4.1",
+    "tailwindcss": "3.3.6",
+    "tone": "^15.1.22",
+    "typescript": "5.3.2",
+    "wavesurfer.js": "^7.11.0"
+  },
+  "devDependencies": {
+    "eslint": "8.54.0",
+    "eslint-config-next": "14.0.3"
+  }
+}

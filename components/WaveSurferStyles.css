@@ -1,0 +1,238 @@
+/**
+ * Estilos personalizados para WaveSurfer.js
+ * Mejora la apariencia visual de las ondas para que se vean más realistas
+ */
+
+/* Contenedor principal de WaveSurfer */
+.wavesurfer-container {
+  position: relative;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Canvas de WaveSurfer */
+.wavesurfer-container canvas {
+  border-radius: 6px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* Efectos de gradiente para las ondas */
+.wavesurfer-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(59, 130, 246, 0.1) 0%,
+    rgba(59, 130, 246, 0.3) 50%,
+    rgba(59, 130, 246, 0.1) 100%
+  );
+  pointer-events: none;
+  border-radius: 6px;
+  z-index: 1;
+}
+
+/* Efecto de resplandor en las ondas */
+.wavesurfer-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(59, 130, 246, 0.05) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  border-radius: 6px;
+  z-index: 2;
+}
+
+/* Estilos para el cursor de reproducción */
+.wavesurfer-container .cursor {
+  background: linear-gradient(180deg, #ffffff 0%, #e5e7eb 100%);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+  border-radius: 1px;
+}
+
+/* Estilos para la barra de progreso */
+.wavesurfer-container .progress {
+  background: linear-gradient(90deg, #3b82f6 0%, #1d4ed8 100%);
+  box-shadow: 0 0 4px rgba(59, 130, 246, 0.4);
+}
+
+/* Efectos de hover para interactividad */
+.wavesurfer-container:hover {
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3), 0 0 8px rgba(59, 130, 246, 0.2);
+  transition: all 0.3s ease;
+}
+
+/* Animación sutil para las ondas */
+@keyframes waveGlow {
+  0% { filter: brightness(1); }
+  50% { filter: brightness(1.1); }
+  100% { filter: brightness(1); }
+}
+
+.wavesurfer-container.playing canvas {
+  animation: waveGlow 2s ease-in-out infinite;
+}
+
+/* Estilos para diferentes colores de pistas */
+.wavesurfer-container.vocals {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+}
+
+.wavesurfer-container.drums {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+}
+
+.wavesurfer-container.bass {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.wavesurfer-container.other {
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+}
+
+.wavesurfer-container.instrumental {
+  background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+}
+
+/* Efectos de profundidad */
+.wavesurfer-container {
+  position: relative;
+}
+
+.wavesurfer-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 50%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+  pointer-events: none;
+  border-radius: 6px;
+  z-index: 3;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .wavesurfer-container {
+    border-radius: 6px;
+  }
+  
+  .wavesurfer-container canvas {
+    border-radius: 4px;
+  }
+}
+
+/* Estilos para modo oscuro */
+.dark .wavesurfer-container {
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+}
+
+.dark .wavesurfer-container::before {
+  background: linear-gradient(
+    90deg,
+    rgba(59, 130, 246, 0.05) 0%,
+    rgba(59, 130, 246, 0.2) 50%,
+    rgba(59, 130, 246, 0.05) 100%
+  );
+}
+
+/* Efectos de partículas para ondas más dinámicas */
+.wavesurfer-container .particle-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 4;
+}
+
+/* Animación de pulso para indicar reproducción */
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.02); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.wavesurfer-container.playing {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Estilos para el contenedor de múltiples pistas */
+.multi-track-container {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.multi-track-container .track-item {
+  margin-bottom: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.multi-track-container .track-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Efectos de brillo para ondas activas */
+.wavesurfer-container.active {
+  box-shadow: 
+    inset 0 2px 4px rgba(0, 0, 0, 0.3),
+    0 0 12px rgba(59, 130, 246, 0.3),
+    0 0 24px rgba(59, 130, 246, 0.1);
+}
+
+/* Estilos para el cursor de tiempo */
+.wavesurfer-container .time-cursor {
+  background: linear-gradient(180deg, #ffffff 0%, #f3f4f6 100%);
+  width: 2px;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+  border-radius: 1px;
+}
+
+/* Efectos de transición suaves */
+.wavesurfer-container * {
+  transition: all 0.2s ease;
+}
+
+/* Estilos para el contenedor de controles */
+.wavesurfer-controls {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-top: 8px;
+}
+
+/* Efectos de profundidad 3D */
+.wavesurfer-container {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.wavesurfer-container canvas {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
